@@ -7,8 +7,6 @@ public:
 
 	//プレイヤーの移動関数
 	Vec2 PlayerMove();
-	//弾を打つ
-	void PlayerShot();
 	//自機の描画
 	void PlayerDraw();
 protected:

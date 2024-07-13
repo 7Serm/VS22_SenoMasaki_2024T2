@@ -7,11 +7,6 @@ Vec2 Player::PlayerMove()
 	player_pos.clamp(Scene::Rect());
 	return player_pos;
 }
-
-void Player::PlayerShot()
-{
-}
-
 void Player::PlayerDraw()
 {
 	PLAYER_TEXTURE.resized(80).drawAt(PlayerMove());
