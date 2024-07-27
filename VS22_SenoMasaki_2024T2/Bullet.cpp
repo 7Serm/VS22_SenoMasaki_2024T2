@@ -2,25 +2,16 @@
 #include "stdafx.h"
 #include "Siv3D.hpp"
 
-bool Bullet::ShotTime()
-{
-	get_cooltime += 1;
-	if ( shot_cooltimer <= get_cooltime)
-	{
-		bullets_flag = true;
-	}
-	shot_cooltimer = 10;
-	return bullets_flag;
-}
-
 void Bullet::Shot()
 {
-	if ( ShotTime() && bullet_count < 100)
+	get_cooltime++;
+
+	if ( get_cooltime == 100)
 	{
 		bulles << bullet_genepos;
 		bullet_count++;
+		get_cooltime = 0;
 	}
-	bullets_flag = false;
 
 }
 
@@ -28,7 +19,7 @@ void Bullet::BulletMove()
 {
 	for (auto& bullet : bulles)
 	{
-		bullet.y += bullet_speed*Random(1,5);
+		bullet.y += bullet_speed;//*Random(1,5);
 	}
 }
 

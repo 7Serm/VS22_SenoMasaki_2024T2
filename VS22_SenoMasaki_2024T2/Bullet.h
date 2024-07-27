@@ -8,8 +8,6 @@ public:
 
 	//クールタイムを終えたかどうか
 	bool bullets_flag = false;
-	//弾を打つ打つ間のクールタイム管理
-	 bool ShotTime();
 	//弾を打つ関数
 	void Shot();
 	//弾の移動
@@ -20,12 +18,14 @@ protected:
 
 private:
 	//弾が移動する速さ
-     double bullet_speed = 0.1;
+     double bullet_speed = 1.0f;
 
 	 //弾を連続で発射しないようにクールタイムを設ける
 	  float get_cooltime = 0;
 	 //クールタイムを管理するための変数
 	 double shot_cooltimer = 10;
+	 //打ち出した弾の数を記録する
 	 double bullet_count = 0;
+	 //弾のデザイン
 	 const Texture BULLET_TEXTURE{ U"☠️"_emoji };
 };
